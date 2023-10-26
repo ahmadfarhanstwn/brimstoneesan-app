@@ -9,6 +9,7 @@ require (
 	github.com/ahmadfarhanstwn/brimstoneesan v0.0.0-20231004155532-1d4e0d0d7daa
 	github.com/go-chi/chi/v5 v5.0.10
 	github.com/upper/db/v4 v4.6.0
+	golang.org/x/crypto v0.14.0
 )
 
 require (
@@ -26,6 +27,5 @@ require (
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/lib/pq v1.10.9 // indirect
 	github.com/segmentio/fasthash v1.0.3 // indirect
-	golang.org/x/crypto v0.6.0 // indirect
-	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 )
