@@ -1,6 +1,7 @@
 package main
 
 import (
+	"myapp/data"
 	"myapp/handlers"
 
 	"github.com/ahmadfarhanstwn/brimstoneesan"
@@ -9,6 +10,7 @@ import (
 type application struct {
 	App      *brimstoneesan.Brimstoneesan
 	Handlers *handlers.Handlers
+	Models   data.Models
 }
 
 func main() {

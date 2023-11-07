@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"myapp/data"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -15,6 +16,24 @@ func (a *application) routes() *chi.Mux {
 	a.App.Routes.Get("/go-page", a.Handlers.GoPage)
 	a.App.Routes.Get("/jet-page", a.Handlers.JetPage)
 	a.App.Routes.Get("/sessions-page", a.Handlers.TestSessionsPage)
+
+	a.App.Routes.Get("/test-insert", func(w http.ResponseWriter, r *http.Request) {
+		user := data.User{
+			FirstName: "Joko",
+			LastName:  "Netanyahu",
+			Email:     "netanyahu@bangsatkau.com",
+			Active:    1,
+			Password:  "netanyahubangsat",
+		}
+
+		id, err := a.Models.Users.Insert(user)
+		if err != nil {
+			a.App.ErrorLog.Println(err)
+			return
+		}
+
+		fmt.Fprintf(w, "%d : %s", id, user.FirstName)
+	})
 
 	a.App.Routes.Get("/test-jet", func(w http.ResponseWriter, r *http.Request) {
 		a.App.Render.JetPage(w, r, "test-jet", nil, nil)
