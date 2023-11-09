@@ -17,6 +17,9 @@ Welcome
             <h1>Brimstoneesan (Jet Templates)</h1>
             <hr>
             <small class="text-muted">Go build something awesome</small>
+            {{if .IsAuthenticated}}
+                <small>Authenticated! <a href="/logout">Logout</a></small>
+            {{end}}
         </div>
     </div>
     <hr />
@@ -25,6 +28,7 @@ Welcome
         <a href="/go-page" class="list-group-item list-group-item-action">Render a go template</a>
         <a href="/jet-page" class="list-group-item list-group-item-action">Render a jet template</a>
         <a href="/sessions-page" class="list-group-item list-group-item-action">Try sessions</a>
+        <a href="/login" class="list-group-item list-group-item-action">Login</a>
     </div>
 </div>
 
